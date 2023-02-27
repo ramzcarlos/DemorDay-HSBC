@@ -1,0 +1,29 @@
+<p>lista-usuarios worksss lista</p>
+
+<h2>Lista usuarios</h2>
+
+<table class="table table-striped">
+<thead class="table-dark">
+    <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Email</th>
+        <th>User name</th>
+        <th>Acciones</th>
+    </tr>
+</thead>
+
+<tbody>
+    <tr *ngFor="let usuario of usuarios">
+        <td>{{usuario.nombre}}</td>
+        <td>{{usuario.apellido}}</td>
+        <td>{{usuario.email}}</td>
+        <td>{{usuario.username}}</td>
+        <td>
+            <button (click)= "actualizarUsuario(usuario.id)" class="btn btn-info">Editar</button>
+            <button (click)= "eliminarUsuario(usuario.id)" class="btn btn-danger" style="margin-left : 10px;">Eliminar</button>
+        </td>
+    </tr>
+</tbody>
+
+</table>

@@ -1,0 +1,55 @@
+<p>registrar-usuario work</p>
+
+<div class="col-md-6 offset-md-3">
+    <h3 class="text-center">Registro de usuario</h3>
+    <form (ngSubmit)= "onSubmit()" >
+    <div class="form-group">
+    <label>Nombre : </label>
+      <input type = "text"
+      class="form-control"
+      id = "nombre"
+      [(ngModel)] = "usuario.nombre"
+      name = "nombre"
+      >
+    </div>
+    <div class="form-group">
+        <label>Apellido : </label>
+          <input type = "text"
+          class="form-control"
+          id = "apellido"
+          [(ngModel)] = "usuario.apellido"
+          name = "apellido"
+          >
+    </div>
+    <div class="form-group">
+            <label>Email : </label>
+              <input type = "email"
+              class="form-control"
+              id = "email"
+              [(ngModel)] = "usuario.email"
+              name = "email"
+              >
+    </div>
+    <div class="form-group">
+                <label>User Name : </label>
+                  <input type = "text"
+                  class="form-control"
+                  id = "username"
+                  [(ngModel)] = "usuario.username"
+                  name = "nombre"
+                  >
+    </div>
+                <div class="form-group">
+                    <label>Password : </label>
+                      <input type = "password"
+                      class="form-control"
+                      id = "pass"
+                      [(ngModel)] = "usuario.pass"
+                      name = "pass"
+                      >
+                    </div>
+    <button class="btn btn-success">Guardar</button>
+    </form>
+</div>
+
+

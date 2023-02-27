@@ -1,0 +1,64 @@
+<p>registrar-sismos works!</p>
+<div class="col-md-6 offset-md-3">
+    <h3 class="text-center">Registro de sismos</h3>
+    <form (ngSubmit)= "onSubmit()" >
+    <div class="form-group">
+    <label>Descripcion : </label>
+      <input type = "text"
+      class="form-control"
+      id = "descripcion"
+      [(ngModel)] = "sismo.descripcion"
+      name = "descripcion"
+      >
+    </div>
+    <div class="form-group">
+        <label>Country : </label>
+          <input type = "text"
+          class="form-control"
+          id = "country"
+          [(ngModel)] = "sismo.country"
+          name = "country"
+          >
+    </div>
+    <div class="form-group">
+            <label>Town : </label>
+              <input type = "text"
+              class="form-control"
+              id = "town"
+              [(ngModel)] = "sismo.town"
+              name = "town"
+              >
+    </div>
+    <div class="form-group">
+                <label>Year : </label>
+                  <input type = "number"
+                  class="form-control"
+                  id = "year"
+                  [(ngModel)] = "sismo.year"
+                  name = "year"
+                  >
+    </div>
+    <div class="form-group">
+        <label>Mounth : </label>
+          <input type = "number"
+          class="form-control"
+          id = "mounth"
+          [(ngModel)] = "sismo.mounth"
+          name = "mounth"
+          >
+        </div>
+
+        <div class="form-group">
+            <label>Day : </label>
+              <input type = "number"
+              class="form-control"
+              id = "day"
+              [(ngModel)] = "sismo.day"
+              name = "day"
+              >
+            </div>
+    <button class="btn btn-success">Guardar</button>
+    </form>
+</div>
+
+

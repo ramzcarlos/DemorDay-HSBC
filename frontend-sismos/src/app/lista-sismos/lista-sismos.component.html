@@ -1,0 +1,29 @@
+<p>lista-sismos works!</p>
+<h2 class="text-center">Lista sismos</h2>
+
+<table class="table table-striped">
+<thead class="table-dark">
+    <tr>
+        <th>Descripcion</th>
+        <th>Country</th>
+        <th>Town</th>
+        <th>Year</th>
+        <th>mounth</th>
+        <th>Day</th>
+        <th>Acciones</th>
+    </tr>
+</thead>
+
+<tbody>
+    <tr *ngFor="let sismo of sismos">
+        <td>{{sismo.descripcion}}</td>
+        <td>{{sismo.country}}</td>
+        <td>{{sismo.town}}</td>
+        <td>{{sismo.year}}</td>
+        <td>{{sismo.mounth}}</td>
+        <td>{{sismo.day}}</td>
+        
+    </tr>
+</tbody>
+
+</table>

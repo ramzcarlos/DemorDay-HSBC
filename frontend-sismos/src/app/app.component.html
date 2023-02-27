@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<ul class="navbar-nav">
+    <li class="nav-item">
+        <a routerLink="info-sismos" routerLinkActive="active" class="nav-link">Bienvenidos </a>
+    </li>
+    <li class="nav-item">
+        <a routerLink="sismos" routerLinkActive="active" class="nav-link">Lista de sismos</a>
+    </li>
+    <li class="nav-item">
+        <a routerLink="registrar-sismo" routerLinkActive="active" class="nav-link">Add sismos</a>
+    </li>
+
+    <li class="nav-item">
+        <a routerLink="usuarios" routerLinkActive="active" class="nav-link">Lista de usuarios</a>
+    </li>
+    <li class="nav-item">
+        <a routerLink="registrar-usuario" routerLinkActive="active" class="nav-link">Add usuarios</a>
+    </li>
+</ul>
+</nav>
+
+<h1 class="text-center">{{title}}</h1>
+
+
+
+<div class="container">
+    <router-outlet></router-outlet>
+    
+</div>

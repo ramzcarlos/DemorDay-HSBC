@@ -1,0 +1,62 @@
+<p>actualizar-usuario works!</p>
+<div class="col-md-6 offset-md-3">
+    <h3 class="text-center">Edición de usuario</h3>
+    <form (ngSubmit)= "onSubmit()" #usuarioForm = "ngForm">
+      <div class="form-group">
+        <label>Nombre : </label>
+        <input type = "text"
+        class="form-control"
+        id = "nombre"
+        [(ngModel)] = "usuario.nombre"
+        name = "nombre"
+        
+        >
+        
+      </div>
+  
+      <div class="form-group">
+        <label>Apellido : </label>
+        <input type = "text"
+        class="form-control"
+        id = "apellido"
+        [(ngModel)] = "usuario.apellido"
+        name = "apellido"
+        
+        >
+        
+       
+      </div>
+
+
+
+      <div class="form-group">
+        <label>Email : </label>
+        <input type = "email"
+        class="form-control"
+        id = "email"
+        [(ngModel)] = "usuario.email"
+        name = "email"
+        pattern ="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"
+        
+        >
+        
+      </div>
+
+      
+      <div class="form-group">
+        <label>User Name : </label>
+          <input type = "text"
+          class="form-control"
+          id = "username"
+          [(ngModel)] = "usuario.username"
+          name = "nombre"
+          >
+    </div>
+
+
+
+  
+      <button class="btn btn-success" [disabled]= "!usuarioForm.form.valid">Guardar</button>
+    </form>
+  </div>
+  
