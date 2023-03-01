@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListaUsuariosComponent } from './lista-usuarios/lista-usuarios.component';
-import { HttpClientModule} from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { RegistrarUsuarioComponent } from './registrar-usuario/registrar-usuario.component'
 import { FormsModule } from '@angular/forms';
 import { ActualizarUsuarioComponent } from './actualizar-usuario/actualizar-usuario.component';
@@ -12,6 +12,8 @@ import { InfoSismosComponent } from './info-sismos/info-sismos.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ListaSismosComponent } from './lista-sismos/lista-sismos.component';
 import { RegistrarSismosComponent } from './registrar-sismos/registrar-sismos.component';
+import { LoginComponent } from './login/login.component';
+import { AuthInterceptor } from './helpers/auth.interceptor';
 
 
 
@@ -24,7 +26,8 @@ import { RegistrarSismosComponent } from './registrar-sismos/registrar-sismos.co
     InfoSismosComponent,
     NotFoundComponent,
     ListaSismosComponent,
-    RegistrarSismosComponent
+    RegistrarSismosComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,9 @@ import { RegistrarSismosComponent } from './registrar-sismos/registrar-sismos.co
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,12 +4,14 @@ import { ActualizarUsuarioComponent } from './actualizar-usuario/actualizar-usua
 import { InfoSismosComponent } from './info-sismos/info-sismos.component';
 import { ListaSismosComponent } from './lista-sismos/lista-sismos.component';
 import { ListaUsuariosComponent } from './lista-usuarios/lista-usuarios.component';
+import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { RegistrarSismosComponent } from './registrar-sismos/registrar-sismos.component';
 import { RegistrarUsuarioComponent } from './registrar-usuario/registrar-usuario.component';
 
 
 const routes: Routes = [
+  {path: 'login', component:LoginComponent},
   {path : 'info-sismos', component:InfoSismosComponent},
   {path : 'usuarios', component:ListaUsuariosComponent},
   {path : '', redirectTo: 'info-sismos', pathMatch: 'full'},

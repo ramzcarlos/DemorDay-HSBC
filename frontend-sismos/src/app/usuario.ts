@@ -7,3 +7,8 @@ email: string;
 username: string;
 pass: string;
 }
+
+export interface Credentials{
+    email:string;
+    pass:string;
+}

@@ -28,6 +28,8 @@ public class UsuarioController {
     // este metodo sirve para guardar el usuario
     @PostMapping("/usuarios")
     public  Usuario guardarUsuario(@RequestBody Usuario usuario){
+
+
         return repository.save(usuario);
     }
 

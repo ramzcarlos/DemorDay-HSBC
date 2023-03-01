@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { Usuario } from './usuario';
+import { HttpClient, HttpResponse } from '@angular/common/http';
+import { map, Observable } from 'rxjs';
+import { Credentials, Usuario } from './usuario';
 
 
 @Injectable({
@@ -39,6 +39,25 @@ obtenerUsuarioPorId(id:number):Observable<Usuario>{
 
 eliminarUsuario(id:number): Observable<Object>{
   return this.httpClient.delete(`${this.baseURL}/${id}`);
+}
+
+login(creds: Credentials){
+  return this.httpClient.post('http://localhost:8080/login', creds,{
+    observe:'response'
+  }).pipe(map((Response: HttpResponse<any>)=>{
+    const body = Response.body;
+    const headers = Response.headers;
+
+    const bearerToken = headers.get('Authorization')!;
+    const token = bearerToken.replace('bearer', '');
+    localStorage.setItem('token', token);
+
+    return body;
+  }))
+}
+
+getToken(){
+  return localStorage.getItem('token');
 }
 
 }
